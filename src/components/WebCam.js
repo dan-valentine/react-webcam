@@ -81,16 +81,15 @@ export default class WebCam extends Component {
     }
 
     takeImg = () => {
-        var canvas = document.createElement('canvas');
+        const canvas = document.createElement('canvas');
         canvas.width = this.video.offsetWidth;
         canvas.height = this.video.offsetHeight;
-        var ctx = canvas.getContext('2d');
+        const ctx = canvas.getContext('2d');
         ctx.drawImage(this.video, 0, 0, canvas.width, canvas.height);
 
         //convert to desired file format
-        var  dataURI = canvas.toDataURL('image/jpeg'); // can also use 'image/png'
+        const  dataURI = canvas.toDataURL('image/jpeg'); // can also use 'image/png'
         return dataURI;
-        // return "http://placekitten.com/203/302";
     }
 
     saveImg = () =>{
